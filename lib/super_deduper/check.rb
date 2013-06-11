@@ -13,7 +13,7 @@ module SuperDeduper
         })
 
         term.split(" ").each do |token|
-          ret_hash[term][token] = @klass.where(["? ilike ?", @kolumn, "%#{token}%"])
+          ret_hash[term][token] = @klass.where(["#{@kolumn} ilike ?", "%#{token}%"])
         end
       end
 
