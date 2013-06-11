@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SuperDeduper::VERSION
   spec.authors       = ["Tad Hosford"]
   spec.email         = ["tad.hosford@gmail.com"]
-  spec.description   = %q{"Checks an array of strings against records in the specified table & column. It's a super deduper."}
-  spec.summary       = %q{"It's a super deduper."}
+  spec.description   = %q{"Checks an array of strings against records in the specified table & column. It's a super-deee-duper dupe-checker."}
+  spec.summary       = %q{"It's a super deduper...errr, dupe checker"}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "pay_dirt"
+  spec.add_development_dependency "pry"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
