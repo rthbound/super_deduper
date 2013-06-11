@@ -4,7 +4,7 @@ It's a super deduper.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+**Note** you will need postgres up and running in your app. Add this line to your application's Gemfile:
 
     gem 'super_deduper'
 
