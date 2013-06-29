@@ -2,6 +2,8 @@
 
 It's a super deduper.
 
+[![Build Status](https://travis-ci.org/rthbound/super_deduper.png)](https://travis-ci.org/rthbound/super_deduper)
+
 ## Installation
 
 **Note** you will need postgres up and running in your app.
