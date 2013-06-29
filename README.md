@@ -2,7 +2,10 @@
 
 It's a super deduper.
 
+[![Gem Version](https://badge.fury.io/rb/super_deduper.png)](http://badge.fury.io/rb/super_deduper)
 [![Build Status](https://travis-ci.org/rthbound/super_deduper.png)](https://travis-ci.org/rthbound/super_deduper)
+[![Code Climate](https://codeclimate.com/github/rthbound/super_deduper.png)](https://codeclimate.com/github/rthbound/super_deduper)
+[![Coverage Status](https://coveralls.io/repos/rthbound/super_deduper/badge.png)](https://coveralls.io/r/rthbound/super_deduper)
 
 ## Installation
 
