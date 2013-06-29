@@ -19,7 +19,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-SuperDeduper.new(enum: ["John Doe", "Jane Doe"], klass: Person, kolumn: "name")
+SuperDeduper.new(enum: ["John Doe", "Jane Doe"], class: Person, column: "name")
 ```
 
 will tell you if anything matches either

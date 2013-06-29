@@ -1,31 +1,31 @@
+require "pay_dirt"
 module SuperDeduper
   class Check < PayDirt::Base
     def initialize(options)
-      load_options(:enum, :klass, :kolumn, options)
+      options = {
+        delimiter: " "
+      }.merge(options) and load_options(:enum, :class, :column, options)
     end
 
     def execute!
-      ret_hash = {}
-
       @enum.each do |term|
-        ret_hash.merge!({
-          "#{term}" => {}
-        })
+        @ret ||= {}
+        @ret.merge!({ term => {} }) # Top level hash keys
 
-        term.split(" ").each do |token|
-          ret_hash[term][token] = @klass.where(["#{@kolumn} ilike ?", "%#{token}%"])
+        term.split(@delimiter).each do |token|
+          @ret[term][token] = @class.where(["#{@column} ilike ?", "%#{token}%"])
         end
       end
 
-      if dupe_me_not(ret_hash)
+      if dupe_me_not
         return PayDirt::Result.new(success: true, data: "No matches found")
       else
-        return PayDirt::Result.new(success: true, data: ret_hash)
+        return PayDirt::Result.new(success: true, data: ret)
       end
     end
 
-    def dupe_me_not(ret_hash)
-      !ret_hash.any? { |k,v| v.any? { |kay,vee| vee != [] } }
+    def dupe_me_not
+      !@ret.any? { |k,v| v.any? { |kay,vee| vee != [] } }
     end
   end
 end
