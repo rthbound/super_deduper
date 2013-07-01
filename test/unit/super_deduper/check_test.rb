@@ -19,9 +19,18 @@ describe SuperDeduper::Check do
     res.must_respond_to :execute!
   end
 
-  it "initializes" do
+  it "returns empty" do
     @options[:enum].map { |x| x.split(" ") }.flatten.each do |term|
       @breakfast.expect(:where, MiniTest::Mock.new.expect(:!=, false, [[]]), [["main_ingredient ilike ?", "%#{term}%"]])
+    end
+
+    res = @subject.new(@options).execute!
+    res.successful?.must_equal true
+  end
+
+  it "returns not-empty" do
+    @options[:enum].map { |x| x.split(" ") }.flatten.each do |term|
+      @breakfast.expect(:where, MiniTest::Mock.new.expect(:!=, true, [[]]), [["main_ingredient ilike ?", "%#{term}%"]])
     end
 
     res = @subject.new(@options).execute!

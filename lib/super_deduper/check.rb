@@ -20,7 +20,7 @@ module SuperDeduper
       if dupe_me_not
         return PayDirt::Result.new(success: true, data: "No matches found")
       else
-        return PayDirt::Result.new(success: true, data: ret)
+        return PayDirt::Result.new(success: true, data: @ret)
       end
     end
 
