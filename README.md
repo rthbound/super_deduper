@@ -34,10 +34,6 @@ will tell you if anything matches either
 ```ruby
   Person.where("name ilike %John%") # or
   Person.where("name ilike %Doe%")
-
-
-  Person.where("name ilike %Jane%") # or
-  Person.where("name ilike %Doe%")
 ```
 
 and return to you either "No matches found" (successful), or a namespaced hash showing what was found for each element passed in with `:enum`.
